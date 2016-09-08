@@ -1,0 +1,21 @@
+---
+keystore_file: 'hawkular.keystore'
+alias: 'hawkular'
+keystore_password: 'hawkular'
+key_password: 'hawkular'
+
+cert_der_file: 'hawkular.cer'
+cert_pem_file: 'hawkular.pem'
+java_store_pass: 'changeit'
+
+openssl_dir:
+java_home:
+
+cert:
+  dname: 'CN=localhost'
+  san:
+    ip:
+      - '127.0.0.1'
+    dns:
+      - 'localhost'
+      - 'localhost.localdomain'
