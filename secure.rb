@@ -96,8 +96,8 @@ unless File.exist? config['cert_pem_file']
   cert_dir = "#{config['openssl_dir']}/certs/"
   run_command "#{commands['openssl']} x509 -inform der -in #{config['cert_der_file']} -out #{config['cert_pem_file']}"
   run_command "sudo cp #{config['cert_pem_file']} #{cert_dir}"
-  run_command "#{commands['c_rehash']} #{cert_dir}"
-  run_command "#{commands['c_rehash']} -old -n #{cert_dir}"
+  run_command "sudo #{commands['c_rehash']} #{cert_dir}"
+  run_command "sudo #{commands['c_rehash']} -old -n #{cert_dir}"
 end
 
 parser = SecureDevEnvironment::WildflyParser.new hawkular_server
