@@ -37,7 +37,7 @@ module SecureDevEnvironment
     def add_https_listener
       @doc.xpath('//xmlns:server[@name=\'default-server\']/xmlns:https-listener').each(&:remove)
       default_server = @doc.at_xpath('//undertow:server[@name=\'default-server\']', 'undertow' => @undertow_ns)
-      default_server.add_child '<https-listener name="https" security-realm="UndertowRealm" socket-binding="https"/>\n'
+      default_server.add_child '<https-listener name="https" security-realm="UndertowRealm" socket-binding="https"/>'
     end
 
     def turn_on_ssl
